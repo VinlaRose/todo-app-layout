@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
-import { TodoContext } from "./contexts/Context";
-import { TodoCard } from "./components/todoCard";
+import { TodoContext } from "../contexts/Context";
+import { TodoCard } from "../components/todoCard";
 
 export const Home = () => {
 const {items} = useContext(TodoContext);
@@ -13,7 +13,7 @@ const {btnHandler} = useContext(TodoContext);
              <ul>
                 {items.map((item) => (
                     
-                        <TodoCard {...item}/>
+                      <li key = {item.id}><TodoCard {...item} noDetail noStriking={true}/></li>  
                     
                 ) )}
             </ul>

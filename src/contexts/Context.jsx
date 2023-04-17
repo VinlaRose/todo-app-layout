@@ -87,14 +87,16 @@ export function TodoContextProvider({children}){
   console.log(items)
 
   const btnHandler = (id) => {
-    items.map((item) => {
+    const updatedItems = items.map((item) => {
       if(item.id === id){
-        return {...item , isCompleted: false}
+        return {...item , isCompleted: !item.isCompleted}
       }else{
         return item;
       }
     })
-console.log(id)
+console.log(id);
+setItems(updatedItems);
+
     console.log(items)
   }
 
